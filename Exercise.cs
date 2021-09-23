@@ -23,6 +23,7 @@ namespace Exercise
                             RunExerciseTwo();
                             break;
                         case 3:
+                            RunExerciseThree();
                             break;
                         case -1:
                             keepAlive = false;
@@ -73,6 +74,21 @@ namespace Exercise
             Console.WriteLine("Todays date is {0}", today);
             Console.WriteLine("Tomorrows date is {0}", tomorrow);
             Console.WriteLine("Yesterdays date was {0}", yesterday);
+        }
+        
+          private static void RunExerciseThree()
+        {
+            Console.WriteLine("You successfully ran Exercise Three!");
+            Console.WriteLine();
+
+            Console.Write("Enter your first name: ");
+            string firstName = Console.ReadLine();
+            string fname = firstName;
+
+
+            Console.Write("Enter your last name: ");
+            string lastName = Console.ReadLine();
+            string lname = lastName;
         }
     }
 }
