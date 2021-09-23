@@ -25,6 +25,9 @@ namespace Exercise
                         case 3:
                             RunExerciseThree();
                             break;
+                        case 4:
+                            RunExerciseFour();
+                            break;
                         case -1:
                             keepAlive = false;
                             break;
@@ -89,6 +92,36 @@ namespace Exercise
             Console.Write("Enter your last name: ");
             string lastName = Console.ReadLine();
             string lname = lastName;
+        }
+        
+           private static void RunExerciseFour()
+        {
+            Console.WriteLine("You successfully ran Exercise Four!");
+            Console.WriteLine();
+
+            string str = "The quick fox Jumped Over the DOG";
+            string newStr;
+
+            newStr = str.Replace("quick", "Brown");
+            Console.WriteLine($"The source string is <{str}>");
+            Console.WriteLine($"The updated string using Replace Method is <{newStr}>");
+            Console.WriteLine();
+
+            newStr = newStr.Insert(30, "lazy ");
+            Console.WriteLine($"The source string is <{str}>");
+            Console.WriteLine($"The updated string after using Insert Method is <{newStr}>");
+            Console.WriteLine();
+
+            string toRemove = "Jumped ";
+            string result = string.Empty;
+            int i = str.IndexOf(toRemove);
+            if (i >= 0)
+            {
+                result = str.Remove(i, toRemove.Length);
+            }
+            Console.WriteLine($"The source string is <{str}>");
+            Console.WriteLine($"The updated string after using Remove and IndexOf Method is <{result}>");
+            Console.WriteLine();
         }
     }
 }
