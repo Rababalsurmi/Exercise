@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Exercise
 {
@@ -28,6 +28,9 @@ namespace Exercise
                         case 4:
                             RunExerciseFour();
                             break;
+                        case 5:
+                            RunExerciseFive();
+                            break;
                         case -1:
                             keepAlive = false;
                             break;
@@ -56,6 +59,7 @@ namespace Exercise
         private static void RunExerciseOne()
         {
             Console.WriteLine("You successfully ran Exercise one!");
+            Console.WriteLine();
 
             Console.WriteLine("Enter your first name:");
             string firstName = Console.ReadLine();
@@ -69,6 +73,7 @@ namespace Exercise
         private static void RunExerciseTwo()
         {
             Console.WriteLine("You successfully ran Exercise two!");
+            Console.WriteLine();
 
             DateTime today = DateTime.Now;
             DateTime tomorrow = DateTime.Today.AddDays(1);
@@ -78,8 +83,8 @@ namespace Exercise
             Console.WriteLine("Tomorrows date is {0}", tomorrow);
             Console.WriteLine("Yesterdays date was {0}", yesterday);
         }
-        
-          private static void RunExerciseThree()
+
+        private static void RunExerciseThree()
         {
             Console.WriteLine("You successfully ran Exercise Three!");
             Console.WriteLine();
@@ -93,8 +98,8 @@ namespace Exercise
             string lastName = Console.ReadLine();
             string lname = lastName;
         }
-        
-           private static void RunExerciseFour()
+
+        private static void RunExerciseFour()
         {
             Console.WriteLine("You successfully ran Exercise Four!");
             Console.WriteLine();
@@ -122,6 +127,43 @@ namespace Exercise
             Console.WriteLine($"The source string is <{str}>");
             Console.WriteLine($"The updated string after using Remove and IndexOf Method is <{result}>");
             Console.WriteLine();
+        }
+
+        private static void RunExerciseFive()
+        {
+            Console.WriteLine("You successfully ran Exercise Five!");
+            Console.WriteLine();
+            char[] charSeparators = new char[] { ',' };
+
+            string str = "Arrays are very common in programming, they look something like: [1,2,3,4,5]";
+            string newStr;
+            int found = 0;
+
+            
+            found = str.IndexOf("[1,2,3,4,5]");
+            newStr = str.Substring(found);
+            Console.WriteLine($"The source string is <{str}>");
+            Console.WriteLine("The new string is {0}", newStr);
+            Console.WriteLine();
+
+            
+            string result = string.Empty;
+            result = newStr.Remove(3,4);
+
+            Console.WriteLine($"The string is <{newStr}>");
+            Console.WriteLine($"The updated string after Removing 2 and 3 is <{result}>");
+            Console.WriteLine();
+
+            Console.WriteLine($"The string is <{result}>");
+
+            newStr = result.Insert( 6, ", 6, 7, 8, 9, 10") ;
+            //string joinedNewStr = string.Join(",", newStr);
+            //newStr.Split(charSeparators);
+
+
+            Console.WriteLine($"The updated string after Inserting 6-10 comma separated is <{newStr}>");
+            Console.WriteLine();
+
         }
     }
 }
